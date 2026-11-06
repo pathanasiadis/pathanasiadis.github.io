@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Research Portfolio | Master Student</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#8c4f00", "tertiary-fixed": "#dced4c", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#673d0e", "surface-container-high": "#f8e5d7", "tertiary-container": "#a8b811", "surface-container-low": "#fff1e8", error: "#ba1a1a", "surface-variant": "#f2dfd2", outline: "#887361", "on-error": "#ffffff", "surface-dim": "#ead7c9", "on-background": "#231a12", secondary: "#835424", "on-secondary-container": "#794c1d", "secondary-fixed": "#ffdcbf", "on-primary-container": "#643700", "on-secondary": "#ffffff", "on-tertiary-fixed": "#1a1e00", "primary-fixed-dim": "#ffb874", "surface-container": "#feeadd", tertiary: "#5a6400", "on-tertiary-fixed-variant": "#444b00", primary: "#8c4f00", "surface-container-lowest": "#ffffff", "primary-fixed": "#ffdcbf", "on-surface-variant": "#554334", "secondary-container": "#febf86", surface: "#fff8f5", background: "#fff8f5", "on-error-container": "#93000a", "on-primary-fixed-variant": "#6b3b00", "secondary-fixed-dim": "#f8ba81", "inverse-surface": "#392e25", "error-container": "#ffdad6", "on-secondary-fixed": "#2d1600", "on-surface": "#231a12", "inverse-on-surface": "#ffeee2", "outline-variant": "#dbc2ad", "on-primary-fixed": "#2d1600", "primary-container": "#ff9504", "on-tertiary-container": "#3f4600", "tertiary-fixed-dim": "#c0d030", "surface-bright": "#fff8f5", "surface-container-highest": "#f2dfd2", "on-tertiary": "#ffffff", "inverse-primary": "#ffb874" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "section-gap": "120px", gutter: "24px", "container-max-width": "1120px", "margin-page": "max(4vw, 32px)", unit: "4px" }, fontFamily: { "display-xl": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "code-md": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }], "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }], "headline-lg": ["2.5rem", { lineHeight: "1.2", fontWeight: "600" }], "label-sm": ["0.875rem", { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["1.125rem", { lineHeight: "1.7", fontWeight: "400" }], "code-md": ["0.9rem", { lineHeight: "1.5", fontWeight: "400" }], "headline-md": ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }] } } } };</script>
+  <style>
+    .glass-nav {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .fractal-bg {
+      background-image: radial-gradient(circle at 2px 2px, rgba(0, 123, 167, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    .math-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .math-card:hover {
+      border-color: #007ba7;
+      background-color: rgba(0, 123, 167, 0.02);
+      box-shadow: 0 10px 40px -10px rgba(0, 123, 167, 0.05);
+    }
+
+    .active-nav-border {
+      border-bottom: 2px solid #006184;
+    }
+
+    .profile-mask {
+      mask-image: radial-gradient(circle, black 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
+    }
+
+    .skill-bar {
+      height: 4px;
+      background-color: #e2e8f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background-color: #8c4f00;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: width 1s ease-out;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed">
+  <!-- TopAppBar -->
+  <header
+    class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200 shadow-sm shadow-sky-500/5">
+    <div class="flex justify-between items-center h-16 px-8 max-w-7xl mx-auto">
+      <div class="font-['Newsreader'] text-xl font-semibold text-sky-700" style=""><br /></div>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-slate-600 font-medium hover:text-sky-600 font-['Newsreader'] tracking-tight transition-all active:scale-95 cursor-pointer"
+          href="#projects" style="">Projects</a>
+        <a class="text-slate-600 font-medium hover:text-sky-600 font-['Newsreader'] tracking-tight transition-all active:scale-95 cursor-pointer"
+          href="#technical" style="">Technical</a>
+        <!-- <a class="text-slate-600 font-medium hover:text-sky-600 font-['Newsreader'] tracking-tight transition-all active:scale-95 cursor-pointer"
+          href="#technical" style=""></a> -->
+        <a class="text-slate-600 font-medium hover:text-sky-600 font-['Newsreader'] tracking-tight transition-all active:scale-95 cursor-pointer"
+          href="#about" style="">About</a>
+        <a class="text-slate-600 font-medium hover:text-sky-600 font-['Newsreader'] tracking-tight transition-all active:scale-95 cursor-pointer"
+          href="#contact" style="">Contact</a>
+      </nav>
+      <a href="cv.pdf" target="_blank"
+        class="inline-block bg-primary text-on-primary px-6 py-2 font-label-sm uppercase tracking-widest text-xs hover:bg-primary-container transition-colors">
+        Download CV
+      </a>
+    </div>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-16 overflow-hidden" id="research">
+      <div class="absolute inset-0 z-0 opacity-50">
+        <img
+          alt="High-resolution fractal background, intricate mathematical patterns, elegant and sophisticated, using a palette of deep navy, slate, and vibrant orange-gold accents"
+          class="w-full h-full object-cover"
+          src="fractal.png"
+          style="" />
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="md:col-span-8 flex flex-col justify-center">
+
+          <span class="font-label-sm text-primary tracking-[0.2em] mb-4 uppercase" style="">Masters Student • Department
+            of Electrical and Computer Engineering - University of Ioannina</span>
+
+          <h1 class="font-display-xl text-display-xl text-on-surface mb-8" style="">Athanasiadis Panagiotis</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-primary pl-8 italic"
+            style="">Leverging the power of super computers through parallel programing,accelators and algorithmic
+            improvement</p>
+        </div>
+        <div class="md:col-span-4 flex items-center justify-center relative">
+          <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <!-- Decorative mathematical circle elements -->
+            <div class="absolute inset-0 border border-primary/20 rounded-full animate-[spin_20s_linear_infinite]">
+            </div>
+            <div
+              class="absolute inset-4 border border-secondary/10 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+            </div>
+            <div class="absolute -inset-8 border-t border-l border-primary/10 rounded-full animate-pulse"></div>
+            <!-- Profile Image with Mask -->
+            <div class="absolute inset-2 bg-white rounded-full p-1 overflow-hidden shadow-2xl shadow-sky-500/20">
+              <img alt="Portrait of Athnasiadis Panagiotis"
+                class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700"
+                src="me.jpeg"
+                style="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary opacity-50">
+        <span class="font-label-sm text-[10px] uppercase tracking-widest" style="">Scroll to explore</span>
+        <span class="material-symbols-outlined animate-bounce" style="">expand_more</span>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface-container-low border-b border-slate-100" id="research-interests">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+          <div class="shrink-0">
+            <h2 class="font-label-sm text-primary tracking-[0.2em] uppercase text-xs mb-2">Focus Areas</h2>
+            <p class="font-headline-md text-headline-md">Research Interests</p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <div class="math-card border border-slate-200 px-6 py-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">memory</span>
+              <span class="font-body-md font-medium text-on-surface">High performance computing</span>
+            </div>
+            <div class="math-card border border-slate-200 px-6 py-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">waves</span>
+              <span class="font-body-md font-medium text-on-surface">Computational fluid dynamics</span>
+            </div>
+            <div class="math-card border border-slate-200 px-6 py-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">architecture</span>
+              <span class="font-body-md font-medium text-on-surface">Computational Geometry</span>
+            </div>
+            <div class="math-card border border-slate-200 px-6 py-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-xl">Experiment</span>
+              <span class="font-body-md font-medium text-on-surface">Scientific Programming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Projects Visual Portfolio -->
+    <section class="py-section-gap px-8 bg-white" id="projects">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div class="max-w-xl">
+            <h2 class="font-headline-lg text-headline-lg mb-4" style="">Some of my work</h2>
+            <p class="font-body-md text-on-surface-variant" style="">An exhibition of my work over the past years,
+              <b>click on any picture</b> for further information!
+            </p>
+          </div>
+
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <!-- Project Card 1: Large -->
+          <div class="md:col-span-8 group cursor-pointer">
+            <div class="math-card border border-slate-200 p-2 overflow-hidden">
+              <div class="relative aspect-[16/11] overflow-hidden bg-slate-100">
+                <a href="thesis.pdf" target="_blank" download class="block w-full h-full">
+                  <img alt="Fluid Dynamics"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                    data-alt="High-speed photograph of ink swirling in water capturing complex turbulent patterns and fluid dynamics"
+                    src="sample.png" style="" />
+                  <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 font-label-sm text-[10px] uppercase"
+                    style="">COMPUTATIONAL GEomerty</div>
+              </div>
+              </a>
+              <div class="py-6 px-4">
+                <h3 class="font-headline-md text-headline-md mb-2" style="">B-splines</h3>
+                <p class="font-body-md text-on-surface-variant line-clamp-2" style="">This thesis presents the
+                  implementation of numerical methods in C/C++ to approximate solutions of differential equations with
+                  boundary conditions using B-splines.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="md:col-span-4 group cursor-pointer">
+            <div class="math-card border border-slate-200 p-2 overflow-hidden h-full flex flex-col">
+              <div class="relative aspect-square overflow-hidden bg-slate-100">
+                <a href="cfd_project.pdf" target="_blank" download class="block w-full h-full">
+                  <img alt="Neural Networks"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    data-alt="Digital visualization of a neural network architecture with thin glowing lines connecting nodes in a structured grid"
+                    src="cfd.png" style="" />
+                </a>
+                <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 font-label-sm text-[10px] uppercase" style="">
+                  Fluid Dynamics</div>
+              </div>
+
+              <div class="py-6 px-4 flex-grow">
+                <h3 class="font-headline-md text-headline-md mb-2" style="">High Performance CFD Solver for Laminar Pipe
+                  Flow Problem</h3>
+                <p class="font-body-md text-on-surface-variant" style="">Written in C++ and CUDA, this project
+                  aims to speed up execution times over the MATLAB implementation up to 50 times more by utilizing
+                  advanced synchronization techniques,parallel computations and GPU programming.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="md:col-span-4 group cursor-pointer">
+            <div class="math-card border border-slate-200 p-2 overflow-hidden">
+              <div class="relative aspect-square overflow-hidden bg-slate-100">
+                <a href="occ.pdf" target="_blank" download class="block w-full h-full">
+                  <img alt="Experimental Setup"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    data-alt="Abstract scientific laboratory glass equipment with soft focus and blue tonal lighting"
+                    src="occ_logo.png" style="" />
+                </a>
+                <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 font-label-sm text-[10px] uppercase" style="">
+                  OPEN SOURCE CONTRIBUTIONS</div>
+              </div>
+              <div class="py-6 px-4">
+                <h3 class="font-headline-md text-headline-md mb-2" style="">OCC</h3>
+                <p class="font-body-md text-on-surface-variant" style="">Open Computational Chemistry is a
+                  next-generation quantum chemistry and crystallography program and library, designed for modern
+                  computational workflows, written in pure C++, my part of
+                  contribution is to improve build times by refactoring the code base and applying compiler
+                  optimizations.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 4 -->
+          <div class="md:col-span-8 group cursor-pointer">
+            <div class="math-card border border-slate-200 p-2 overflow-hidden">
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+
+                <!-- Clickable image area only -->
+                <div class="relative group cursor-pointer overflow-hidden w-full h-full" onclick="nextPhoto()">
+                  <img id="gallery-img"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    src="cluster.jpg">
+                  <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 font-label-sm text-[10px] uppercase">
+                    PARALLEL PROCESSING GROUP
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Text content outside the clickable image -->
+              <div class="py-6 px-4">
+                <h3 class="font-headline-md text-headline-md mb-2">Raspberry Pi Cluster</h3>
+                <p class="font-body-md text-on-surface-variant">
+                  Scope of this project is to explore parallel computations on an ARM architecture CPU by building
+                  a 74 node Raspberry Pi 5 cluster from the ground up (Custom PSU, 3d printed parts, Slurm etc).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Script moved outside the card entirely -->
+          <script>
+            const photos = [
+              "cluster.jpg",
+              "cluster_cables.png",
+              "first_cluster.jpg",
+              "3d_printer.png"
+            ];
+            let currentIndex = 0;
+
+            function nextPhoto() {
+              currentIndex = (currentIndex + 1) % photos.length;
+              document.getElementById('gallery-img').src = photos[currentIndex];
+            }
+          </script>
+    </section>
+
+
+
+    <!-- Technical Skills & Toolkit -->
+    <section class="py-section-gap bg-surface-container-low fractal-bg" id="technical">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="mb-16 border-l-4 border-primary pl-8">
+          <h2 class="font-headline-lg text-headline-lg">Technical Skills &amp; Toolkit</h2>
+          <p class="font-label-sm text-primary tracking-[0.2em] uppercase mt-2">Core Proficiencies &amp; Stack</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+          <!-- Skills Chart Area -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="bg-white p-12 border border-slate-200 math-card">
+              <h4 class="font-label-sm text-primary mb-10 uppercase tracking-widest text-xs">Technical Skill Set</h4>
+              <div class="space-y-8">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">C++</span>
+                    <span class="font-label-sm text-xs text-primary">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">CUDA</span>
+                    <span class="font-label-sm text-xs text-primary">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">Mathematical Modelling</span>
+                    <span class="font-label-sm text-xs text-primary">Proficient</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 62%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">OpenMP</span>
+                    <span class="font-label-sm text-xs text-primary">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">MPI</span>
+                    <span class="font-label-sm text-xs text-primary">Proficient</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 65%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">C</span>
+                    <span class="font-label-sm text-xs text-primary">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-code-md text-on-surface">Python</span>
+                    <span class="font-label-sm text-xs text-primary">Proficient</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Expertise & Tooling Sidebar -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="bg-white p-10 border border-slate-200 math-card">
+              <h4 class="font-label-sm text-primary mb-8 uppercase tracking-widest text-xs">Expertise &amp; Tooling</h4>
+              <div class="space-y-8">
+                <div>
+                  <span class="font-label-sm text-[10px] text-outline block mb-4 uppercase tracking-tighter">Profiling
+                    &amp; Analysis</span>
+                  <div class="flex flex-wrap gap-2">
+                    <div
+                      class="px-4 py-3 bg-surface-container-low border border-slate-100 flex items-center gap-3 w-full">
+                      <span class="material-symbols-outlined text-primary text-sm">speed</span>
+                      <span class="font-body-md text-sm font-medium">Intel VTune Profiler</span>
+                    </div>
+                    <div
+                      class="px-4 py-3 bg-surface-container-low border border-slate-100 flex items-center gap-3 w-full">
+                      <span class="material-symbols-outlined text-primary text-sm">query_stats</span>
+                      <span class="font-body-md text-sm font-medium">NVIDIA Nsight Compute</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <span class="font-label-sm text-[10px] text-outline block mb-4 uppercase tracking-tighter">Numerical
+                    Libraries</span>
+                  <div class="grid grid-cols-1 gap-2">
+                    <div class="px-4 py-2 border-b border-slate-100 flex justify-between items-center">
+                      <span class="font-code-md text-xs">Intel MKL</span>
+                      <span class="font-label-sm text-[9px] text-slate-400">Math Kernel</span>
+                    </div>
+                    <div class="px-4 py-2 border-b border-slate-100 flex justify-between items-center">
+                      <span class="font-code-md text-xs">GSL</span>
+                      <span class="font-label-sm text-[9px] text-slate-400">Scientific Lib</span>
+                    </div>
+                    <div class="px-4 py-2 border-b border-slate-100 flex justify-between items-center">
+                      <span class="font-code-md text-xs">cuSPARSE</span>
+                      <span class="font-label-sm text-[9px] text-slate-400">CUDA Accelerated Sparse Matrices</span>
+                    </div>
+                    <div class="px-4 py-2 border-b border-slate-100 flex justify-between items-center">
+                      <span class="font-code-md text-xs">cuBLAS</span>
+                      <span class="font-label-sm text-[9px] text-slate-400">CUDA Accelerated Linear Algebra</span>
+                    </div>
+                    <div class="px-4 py-2 border-b border-slate-100 flex justify-between items-center">
+                      <span class="font-code-md text-xs">cuDSS</span>
+                      <span class="font-label-sm text-[9px] text-slate-400">CUDA Accelerated Direct Sparse Solver</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 bg-primary/5 border border-primary/10">
+              <p class="font-body-md text-sm text-on-surface-variant italic">"Constantly refining my toolchain — because
+                faster computations and sharper developer efficiency are never finished goals."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Training Section -->
+    <section class="py-section-gap px-8 bg-white border-b border-slate-100" id="training">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="font-headline-lg text-headline-lg mb-4">Additional Training</h2>
+          <p class="font-label-sm text-primary tracking-[0.2em] uppercase mt-2">Summer Schools &amp; Specialized
+            Workshops
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Training Entry 01 -->
+          <a class="math-card p-8 border border-slate-100 bg-surface-container-lowest flex flex-col h-full block hover:no-underline"
+            href="https://www.hpcsummerschool.it/" target="_blank">
+            <div class="flex justify-between items-start mb-6">
+              <div class="bg-primary/10 text-primary p-3 rounded">
+                <span class="material-symbols-outlined">school</span>
+              </div>
+              <span class="font-label-sm text-[10px] text-outline uppercase">June 2025</span>
+            </div>
+            <h3 class="font-headline-md text-xl mb-3">HPC Summer School</h3>
+            <p class="font-label-sm text-xs text-primary mb-4 uppercase tracking-wider">CINI • NAPLES, Italy</p>
+            <p class="font-body-md text-sm text-on-surface-variant flex-grow">Advanced parallel programming paradigms
+              including MPI/OpenMP hybrid models and GPU optimization for scientific workloads.</p>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">verified</span>
+              <span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Certificate Awarded •
+                Specialized
+                Training</span>
+            </div>
+          </a>
+          <!-- Training Entry 02 -->
+          <a class="math-card p-8 border border-slate-100 bg-surface-container-lowest flex flex-col h-full block hover:no-underline"
+            href="https://complexity2025.dib.uth.gr/en/home/" target="_blank">
+            <div class="flex justify-between items-start mb-6">
+              <div class="bg-primary/10 text-primary p-3 rounded">
+                <span class="material-symbols-outlined">analytics</span>
+              </div>
+              <span class="font-label-sm text-[10px] text-outline uppercase">July 2025</span>
+            </div>
+            <h3 class="font-headline-md text-xl mb-3">Complexity 2025 Summer School</h3>
+            <p class="font-label-sm text-xs text-primary mb-4 uppercase tracking-wider">University of Thessaly • Lamia,
+              Greece</p>
+            <p class="font-body-md text-sm text-on-surface-variant flex-grow">Exploring complex systems, network
+              science,
+              and computational modeling in multidisciplinary environments.</p>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-primary">verified</span>
+              <span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Certificate Awarded</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- About & Publications -->
+    <section class="py-section-gap px-8 bg-surface-container-low overflow-hidden" id="about">
+      <div class="max-w-[720px] mx-auto">
+        <div class="mb-24">
+          <h2 class="font-headline-lg text-headline-lg mb-8 text-center" style="">Intellectual Journey</h2>
+          <!-- <div class="prose prose-slate max-w-none font-body-lg text-on-surface-variant leading-relaxed space-y-6">
+            <p class="" style="">I began my academic career at the Technical University of Munich, where I was first
+              introduced to the beauty of fluid mechanics. It was the realization that simple governing equations could
+              produce such infinite variety and complexity that set my path.</p>
+            <p class="" style="">Currently, my doctoral work at the Max Planck Institute seeks to bridge the gap between
+              high-fidelity simulations and real-time physical modeling. I believe that clarity in research is not about
+              simplification, but about finding the most elegant way to describe complexity.</p>
+          </div> -->
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="font-label-sm text-primary mb-6 uppercase tracking-[0.2em] text-xs" style="">Education</h3>
+            <div class="space-y-6">
+              <div>
+                <p class="font-label-sm text-sm" style="">MSC IN COMPUTER SYSTEMS</p>
+                <p class="font-body-md text-on-surface-variant text-sm" style="">University of Ioannina • 2025-Present
+                </p>
+              </div>
+              <div>
+                <p class="font-label-sm text-sm" style="">BSC IN INFORMATICS</p>
+                <p class="font-body-md text-on-surface-variant text-sm" style="">University of Western Macedonia •
+                  2019-2025</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-label-sm text-primary mb-6 uppercase tracking-[0.2em] text-xs" style="">Honors</h3>
+            <div class="space-y-6">
+              <div>
+                <p class="font-label-sm text-sm" style="">UNDERGRADUATE SCHOLARSHIP</p>
+                <p class="font-body-md text-on-surface-variant text-sm" style="">Compensatory scholarship • 2023</p>
+              </div>
+              <div>
+                <p class="font-label-sm text-sm" style="">UNDERGRADUATE SCHOLARSHIP</p>
+                <p class="font-body-md text-on-surface-variant text-sm" style="">Compensatory scholarship • 2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Personal Interests Section -->
+    <section class="py-section-gap px-8 bg-white border-y border-slate-100" id="interests">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="font-headline-lg text-headline-lg mb-4">Personal Interests</h2>
+        </div>
+        <!-- Martial Arts Sub-section -->
+        <div class="mb-20">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-[1px] bg-primary"></div>
+            <h3 class="font-headline-md text-2xl uppercase tracking-wider">Martial Arts (BJJ)</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+              <div class="aspect-square overflow-hidden bg-slate-100">
+                <img alt="BJJ training session"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  src="bjj.png" />
+              </div>
+              <div class="pt-3 pb-1 px-2">
+                <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">Blue belt promotion
+                </p>
+              </div>
+            </div>
+             <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+              <div class="aspect-square overflow-hidden bg-slate-100">
+                <img alt="BJJ training session"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  src="bjj_comp.png" />
+              </div>
+              <div class="pt-3 pb-1 px-2">
+                <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">Competition
+                </p>
+              </div>
+            </div>
+            <div class="md:col-span-4 p-6 bg-white border border-slate-100 mt-2">
+<p class="font-body-md text-on-surface-variant leading-relaxed italic" style="">"Brazilian Jiu-Jitsu is the ultimate physical chess. It mirrors the problem-solving nature of computational physics: leverage, geometry, and finding the most efficient path to a solution."</p>
+</div>
+          </div>
+          <!-- Motorcycling Sub-section -->
+          <div>
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-[1px] bg-primary"></div>
+              <h3 class="font-headline-md text-2xl uppercase tracking-wider">Motorcycling &amp; Mechanics</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+                <div class="aspect-square overflow-hidden bg-slate-100">
+                  <img alt="klr rebuild"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    src="klr_rbuild.png"" />
+              </div>
+              <div class=" pt-3 pb-1 px-2">
+                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">klr 650
+                    full rebuild
+                  </p>
+                </div>
+              </div>
+              <div class="md:col-span-2 math-card border border-slate-200 p-2 overflow-hidden bg-white">
+                <div class="aspect-video overflow-hidden bg-slate-100">
+                  <img alt="custom intake for yamaha r1"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    src="venturi.png"
+                <div class="pt-3 pb-1 px-2">
+                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">custom intake
+                    for yamaha r1</p>
+                </div>
+              </div>
+              <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+                <div class="aspect-square overflow-hidden bg-slate-100">
+                  <img alt="total rebuild and tuning of the carbureturs"
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    src="cb.png" />
+                </div>
+                <div class="pt-3 pb-1 px-2">
+                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">total rebuild
+                    and tuning of the carburetors for honda cb 600</p>
+                </div>
+              </div>
+              <div class="md:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+                <div class="space-y-2">
+                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Restoration</h4>
+                  <p class="font-body-md text-sm text-on-surface-variant">Rebuilding classic engines to factory
+                    specification or better.</p>
+                </div>
+                <div class="space-y-2">
+                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Engineering</h4>
+                  <p class="font-body-md text-sm text-on-surface-variant">Custom component fabrication for
+                    high-performance builds.</p>
+                </div>
+                <div class="space-y-2">
+                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Modification</h4>
+                  <p class="font-body-md text-sm text-on-surface-variant">Improving performance through precision
+                  tuning.</p>
+                </div>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-section-gap px-8 bg-surface-container-high relative" id="contact">
+      <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-8 text-on-primary">
+          <span class="material-symbols-outlined text-3xl" style="">mail</span>
+        </div>
+        <h2 class="font-display-xl text-4xl mb-6" style="">Open for Collaboration</h2>
+        <p class="font-body-lg text-on-surface-variant max-w-lg mb-12" style="">I am always interested in discussing new
+          research directions,research assistantships and internships for 2025-2026.</p>
+        <div class="flex flex-wrap justify-center gap-12">
+
+          <a class="flex items-center gap-3 group" href="https://github.com/PanagiotisAthanasiadis/" style="">
+            <span class="font-label-sm uppercase tracking-widest text-xs group-hover:text-primary transition-colors"
+              style="">GitHub</span>
+            <span class="w-8 h-[1px] bg-outline group-hover:bg-primary transition-colors"></span>
+          </a>
+
+          <a class="flex items-center gap-3 group" href="mailto:pathanasiadis@cs.uoi.gr" style="">
+            <span class="font-label-sm uppercase tracking-widest text-xs group-hover:text-primary transition-colors"
+              style="">Email</span>
+            <span class="w-8 h-[1px] bg-outline group-hover:bg-primary transition-colors"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
