@@ -13,55 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script
-    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#8c4f00", "tertiary-fixed": "#dced4c", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#673d0e", "surface-container-high": "#f8e5d7", "tertiary-container": "#a8b811", "surface-container-low": "#fff1e8", error: "#ba1a1a", "surface-variant": "#f2dfd2", outline: "#887361", "on-error": "#ffffff", "surface-dim": "#ead7c9", "on-background": "#231a12", secondary: "#835424", "on-secondary-container": "#794c1d", "secondary-fixed": "#ffdcbf", "on-primary-container": "#643700", "on-secondary": "#ffffff", "on-tertiary-fixed": "#1a1e00", "primary-fixed-dim": "#ffb874", "surface-container": "#feeadd", tertiary: "#5a6400", "on-tertiary-fixed-variant": "#444b00", primary: "#8c4f00", "surface-container-lowest": "#ffffff", "primary-fixed": "#ffdcbf", "on-surface-variant": "#554334", "secondary-container": "#febf86", surface: "#fff8f5", background: "#fff8f5", "on-error-container": "#93000a", "on-primary-fixed-variant": "#6b3b00", "secondary-fixed-dim": "#f8ba81", "inverse-surface": "#392e25", "error-container": "#ffdad6", "on-secondary-fixed": "#2d1600", "on-surface": "#231a12", "inverse-on-surface": "#ffeee2", "outline-variant": "#dbc2ad", "on-primary-fixed": "#2d1600", "primary-container": "#ff9504", "on-tertiary-container": "#3f4600", "tertiary-fixed-dim": "#c0d030", "surface-bright": "#fff8f5", "surface-container-highest": "#f2dfd2", "on-tertiary": "#ffffff", "inverse-primary": "#ffb874" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "section-gap": "120px", gutter: "24px", "container-max-width": "1120px", "margin-page": "max(4vw, 32px)", unit: "4px" }, fontFamily: { "display-xl": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "code-md": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }], "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }], "headline-lg": ["2.5rem", { lineHeight: "1.2", fontWeight: "600" }], "label-sm": ["0.875rem", { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["1.125rem", { lineHeight: "1.7", fontWeight: "400" }], "code-md": ["0.9rem", { lineHeight: "1.5", fontWeight: "400" }], "headline-md": ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }] } } } };</script>
-  <style>
-    .glass-nav {
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .fractal-bg {
-      background-image: radial-gradient(circle at 2px 2px, rgba(0, 123, 167, 0.05) 1px, transparent 0);
-      background-size: 40px 40px;
-    }
-
-    .math-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .math-card:hover {
-      border-color: #007ba7;
-      background-color: rgba(0, 123, 167, 0.02);
-      box-shadow: 0 10px 40px -10px rgba(0, 123, 167, 0.05);
-    }
-
-    .active-nav-border {
-      border-bottom: 2px solid #006184;
-    }
-
-    .profile-mask {
-      mask-image: radial-gradient(circle, black 50%, transparent 100%);
-      -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
-    }
-
-    .skill-bar {
-      height: 4px;
-      background-color: #e2e8f0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-progress {
-      height: 100%;
-      background-color: #8c4f00;
-      position: absolute;
-      left: 0;
-      top: 0;
-      transition: width 1s ease-out;
-    }
-  </style>
+<link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed">
@@ -487,20 +439,39 @@
       </div>
     </section>
 
+    <!-- Internships Section -->
+    <section class="py-section-gap px-8 bg-surface-container-low border-b border-slate-100" id="internships">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h2 class="font-headline-lg text-headline-lg mb-4">Internships</h2>
+          <p class="font-label-sm text-primary tracking-[0.2em] uppercase mt-2">Industry Experience</p>
+        </div>
+
+        <a class="math-card p-8 border border-slate-200 bg-white flex flex-col md:flex-row gap-8 md:items-center hover:no-underline"
+          href="https://www.beta-cae.com/" target="_blank" rel="noopener">
+          <div class="shrink-0 w-full md:w-56 h-24 flex items-center justify-center bg-white border border-slate-100 p-4">
+            <img src="beta_cae_logo.png" alt="BETA CAE Systems logo" class="max-h-full max-w-full object-contain" />
+          </div>
+          <div class="flex-grow">
+            <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+              <h3 class="font-headline-md text-xl">Internship in Software Research & Development</h3>
+              <span class="font-label-sm text-[10px] text-outline uppercase">May 2026</span>
+            </div>
+            <p class="font-label-sm text-xs text-primary mb-4 uppercase tracking-wider">BETA CAE Systems</p>
+            <p class="font-body-md text-sm text-on-surface-variant mb-4">
+              Six-month internship in the Volume Meshing team, responsible for improving the speed of computations
+              through GPU acceleration in the ANSA software.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
 
     <!-- About & Publications -->
-    <section class="py-section-gap px-8 bg-surface-container-low overflow-hidden" id="about">
+    <section class="py-section-gap px-8 bg-white bg-surface-container-low overflow-hidden" id="about">
       <div class="max-w-[720px] mx-auto">
         <div class="mb-24">
           <h2 class="font-headline-lg text-headline-lg mb-8 text-center" style="">Intellectual Journey</h2>
-          <!-- <div class="prose prose-slate max-w-none font-body-lg text-on-surface-variant leading-relaxed space-y-6">
-            <p class="" style="">I began my academic career at the Technical University of Munich, where I was first
-              introduced to the beauty of fluid mechanics. It was the realization that simple governing equations could
-              produce such infinite variety and complexity that set my path.</p>
-            <p class="" style="">Currently, my doctoral work at the Max Planck Institute seeks to bridge the gap between
-              high-fidelity simulations and real-time physical modeling. I believe that clarity in research is not about
-              simplification, but about finding the most elegant way to describe complexity.</p>
-          </div> -->
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -538,7 +509,7 @@
 
 
     <!-- Personal Interests Section -->
-    <section class="py-section-gap px-8 bg-white border-y border-slate-100" id="interests">
+    <section class="py-section-gap px-8 border-y border-slate-100" id="interests">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16">
           <h2 class="font-headline-lg text-headline-lg mb-4">Personal Interests</h2>
@@ -576,65 +547,70 @@
 <p class="font-body-md text-on-surface-variant leading-relaxed italic" style="">"Brazilian Jiu-Jitsu is the ultimate physical chess. It mirrors the problem-solving nature of computational physics: leverage, geometry, and finding the most efficient path to a solution."</p>
 </div>
           </div>
+
           <!-- Motorcycling Sub-section -->
-          <div>
-            <div class="flex items-center gap-4 mb-8">
-              <div class="w-12 h-[1px] bg-primary"></div>
-              <h3 class="font-headline-md text-2xl uppercase tracking-wider">Motorcycling &amp; Mechanics</h3>
+      <div>
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-12 h-[1px] bg-primary"></div>
+          <h3 class="font-headline-md text-2xl uppercase tracking-wider">Motorcycling &amp; Mechanics</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+          <!-- Card 1 -->
+          <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+            <div class="aspect-square overflow-hidden bg-slate-100">
+              <img alt="klr rebuild"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="klr_rbuild.png" />
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
-                <div class="aspect-square overflow-hidden bg-slate-100">
-                  <img alt="klr rebuild"
-                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    src="klr_rbuild.png"" />
-              </div>
-              <div class=" pt-3 pb-1 px-2">
-                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">klr 650
-                    full rebuild
-                  </p>
-                </div>
-              </div>
-              <div class="md:col-span-2 math-card border border-slate-200 p-2 overflow-hidden bg-white">
-                <div class="aspect-video overflow-hidden bg-slate-100">
-                  <img alt="custom intake for yamaha r1"
-                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    src="venturi.png"
-                <div class="pt-3 pb-1 px-2">
-                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">custom intake
-                    for yamaha r1</p>
-                </div>
-              </div>
-              <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
-                <div class="aspect-square overflow-hidden bg-slate-100">
-                  <img alt="total rebuild and tuning of the carbureturs"
-                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    src="cb.png" />
-                </div>
-                <div class="pt-3 pb-1 px-2">
-                  <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">total rebuild
-                    and tuning of the carburetors for honda cb 600</p>
-                </div>
-              </div>
-              <div class="md:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                <div class="space-y-2">
-                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Restoration</h4>
-                  <p class="font-body-md text-sm text-on-surface-variant">Rebuilding classic engines to factory
-                    specification or better.</p>
-                </div>
-                <div class="space-y-2">
-                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Engineering</h4>
-                  <p class="font-body-md text-sm text-on-surface-variant">Custom component fabrication for
-                    high-performance builds.</p>
-                </div>
-                <div class="space-y-2">
-                  <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Modification</h4>
-                  <p class="font-body-md text-sm text-on-surface-variant">Improving performance through precision
-                  tuning.</p>
-                </div>
-                
-              </div>
+            <div class="pt-3 pb-1 px-2">
+              <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">klr 650 full rebuild</p>
             </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="md:col-span-2 math-card border border-slate-200 p-2 overflow-hidden bg-white">
+            <div class="aspect-video overflow-hidden bg-slate-100">
+              <img alt="custom intake for yamaha r1"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="venturi.png" />
+            </div>
+            <div class="pt-3 pb-1 px-2">
+              <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">custom intake for yamaha r1</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="math-card border border-slate-200 p-2 overflow-hidden bg-white">
+            <div class="aspect-square overflow-hidden bg-slate-100">
+              <img alt="total rebuild and tuning of the carburetors"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="cb.png" />
+            </div>
+            <div class="pt-3 pb-1 px-2">
+              <p class="font-label-sm text-[10px] text-outline uppercase tracking-widest text-center">total rebuild and tuning of the carburetors for honda cb 600</p>
+            </div>
+          </div>
+
+          <!-- Descriptions -->
+          <div class="md:col-span-4 grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+            <div class="space-y-2">
+              <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Restoration</h4>
+              <p class="font-body-md text-sm text-on-surface-variant">Rebuilding classic engines to factory specification or better.</p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Engineering</h4>
+              <p class="font-body-md text-sm text-on-surface-variant">Custom component fabrication for high-performance builds.</p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-label-sm text-primary uppercase text-xs tracking-widest">Modification</h4>
+              <p class="font-body-md text-sm text-on-surface-variant">Improving performance through precision tuning.</p>
+            </div>
+          </div>
+
+        </div><!-- end grid -->
+      </div><!-- end Motorcycling sub-section -->
 
           </div>
         </div>
@@ -648,7 +624,7 @@
         </div>
         <h2 class="font-display-xl text-4xl mb-6" style="">Open for Collaboration</h2>
         <p class="font-body-lg text-on-surface-variant max-w-lg mb-12" style="">I am always interested in discussing new
-          research directions,research assistantships and internships for 2025-2026.</p>
+          research directions,research assistantships and internships for 2026-2027.</p>
         <div class="flex flex-wrap justify-center gap-12">
 
           <a class="flex items-center gap-3 group" href="https://github.com/PanagiotisAthanasiadis/" style="">

@@ -1,0 +1,53 @@
+module.exports = {
+  content: ["./index.html"],
+  darkMode: "class",
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/container-queries"),
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "surface-tint": "#8c4f00", "tertiary-fixed": "#dced4c", "on-primary": "#ffffff",
+        "on-secondary-fixed-variant": "#673d0e", "surface-container-high": "#f8e5d7",
+        "tertiary-container": "#a8b811", "surface-container-low": "#fff1e8", error: "#ba1a1a",
+        "surface-variant": "#f2dfd2", outline: "#887361", "on-error": "#ffffff",
+        "surface-dim": "#ead7c9", "on-background": "#231a12", secondary: "#835424",
+        "on-secondary-container": "#794c1d", "secondary-fixed": "#ffdcbf",
+        "on-primary-container": "#643700", "on-secondary": "#ffffff",
+        "on-tertiary-fixed": "#1a1e00", "primary-fixed-dim": "#ffb874",
+        "surface-container": "#feeadd", tertiary: "#5a6400",
+        "on-tertiary-fixed-variant": "#444b00", primary: "#8c4f00",
+        "surface-container-lowest": "#ffffff", "primary-fixed": "#ffdcbf",
+        "on-surface-variant": "#554334", "secondary-container": "#febf86", surface: "#fff8f5",
+        background: "#fff8f5", "on-error-container": "#93000a",
+        "on-primary-fixed-variant": "#6b3b00", "secondary-fixed-dim": "#f8ba81",
+        "inverse-surface": "#392e25", "error-container": "#ffdad6",
+        "on-secondary-fixed": "#2d1600", "on-surface": "#231a12",
+        "inverse-on-surface": "#ffeee2", "outline-variant": "#dbc2ad",
+        "on-primary-fixed": "#2d1600", "primary-container": "#ff9504",
+        "on-tertiary-container": "#3f4600", "tertiary-fixed-dim": "#c0d030",
+        "surface-bright": "#fff8f5", "surface-container-highest": "#f2dfd2",
+        "on-tertiary": "#ffffff", "inverse-primary": "#ffb874",
+      },
+      borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      spacing: {
+        "section-gap": "120px", gutter: "24px", "container-max-width": "1120px",
+        "margin-page": "max(4vw, 32px)", unit: "4px",
+      },
+      fontFamily: {
+        "display-xl": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"],
+        "label-sm": ["Inter"], "body-lg": ["Inter"], "code-md": ["Inter"], "headline-md": ["Inter"],
+      },
+      fontSize: {
+        "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
+        "headline-lg": ["2.5rem", { lineHeight: "1.2", fontWeight: "600" }],
+        "label-sm": ["0.875rem", { lineHeight: "1", letterSpacing: "0.02em", fontWeight: "500" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.7", fontWeight: "400" }],
+        "code-md": ["0.9rem", { lineHeight: "1.5", fontWeight: "400" }],
+        "headline-md": ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }],
+      },
+    },
+  },
+};
